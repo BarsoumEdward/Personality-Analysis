@@ -1,0 +1,193 @@
+﻿@model PersonalityAnalysis.Models.PersonalityQuestion
+
+@{
+    ViewBag.Title = "Test";
+}
+<style>
+ 
+
+    span{margin:10px;font-size:18px;color:#45f8d2}
+
+.paner{
+    background:#0094ff;padding-right:30px;padding-top:20px;color:white;border-radius:80px;
+}
+label{font-size:20px;}
+
+    
+.form-group {
+        margin-bottom:50px;
+    }
+
+    .sbmit{margin-right:550px; margin-bottom:20px;width:200px;height:40px;}
+    .name{padding-right:10px;}
+
+
+ 
+    .valid{color:#bd1111}
+
+</style>
+
+
+
+
+<div class="paner panel panel-success">
+    <div class="panel-header text-center">
+        <h1>تحليل الشخصيه</h1>
+        
+    </div>
+   
+
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+          
+
+            <div class="form-group">
+                <label>قبل بدء الاختبار أدخل أسمك أولا:</label>
+                <div>
+                    <input type="text" name="Name" class="name" placeholder="أدخل اسمك"/>
+                    
+                </div>
+                <span class="valid">@Html.ValidationSummary()</span> 
+            </div>
+            
+            <div class="form-group">
+                <label>السؤال الأول: في أي وقت تحسّ بأنك في أفضل حالاتك؟</label>
+                <div>
+                    <input type="radio" name="BestFeeling" value="2" required /><span>فى الصباح الباكر</span>
+                    <input type="radio" name="BestFeeling" value="4" required /><span>فى الظهيره وبداية المساء</span>
+                </div>
+               
+            </div>
+
+            <div class="form-group">
+                <label>السؤال الثاني: كيف تكون طريقتك المعتادة في السير على القدمين؟</label>
+                <div>
+                    <input type="radio" name="WalkWay" value="6" required /><span>بشكل سريع وخطوات طويلة</span>
+                    <input type="radio" name="WalkWay" value="4" required /><span>بشكل سريع وخطوات قصيرة</span>
+                    <input type="radio" name="WalkWay" value="7"  required/><span>بسرعه قليلة مع رفع الرأس, والنظر الى وجوه الناس</span>
+                    <input type="radio" name="WalkWay" value="2"  required/><span>بسرعه قليلة مع طأطأة الرأس نحو الاسفل</span>
+                    <input type="radio" name="WalkWay" value="1" required /><span>بشكل بطى جدا</span>
+                </div>
+                
+
+            </div>
+
+            <div class="form-group">
+                <label>السؤال الثالث: عند التحدث مع الآخرين، فعادةً ما:</label>
+               
+               
+                <div>
+                    <input type="radio" name="SpeakingWithOther" value="4" required /><span>تقف طاوى اليدين</span>
+                    <input type="radio" name="SpeakingWithOther" value="2"  required/><span>تقف واليدين مكتوفتان</span>
+                    <input type="radio" name="SpeakingWithOther" value="5" required /><span>تقف مع وضع اليدين على منطقة الخصر أو الورك أو داخل الجيب.</span>
+                    <input type="radio" name="SpeakingWithOther" value="7" required /><span>لمس الشخص المخاطب أو دفعه</span>
+                    <input type="radio" name="SpeakingWithOther" value="6" required /><span>تحريك اليدين على عدد من أجزاء جسمك، مثل: لمس الذقن، أو الأذنين، أو البطن، أو الشعر</span>.
+
+                </div>
+                
+            </div>
+
+            <div class="form-group">
+                <label>السؤال الرابع:عندما ترغب فى الاسترخاء ,فستكون طريقة الجلوس:</label>
+                <div>
+                    <input type="radio" name="Relaxing" value="4" required /><span>الجلوس مع ثنى الركبتين جنبا الى جنب.</span>
+                    <input type="radio" name="Relaxing" value="6" required /><span>الجلوس مع تقاطع القدمين,احداهما فوق الاخرى.</span>
+                    <input type="radio" name="Relaxing" value="2" required/><span>الجلوس مع مد الرجلين بشكل مستقيم.</span>
+                    <input type="radio" name="Relaxing" value="1" required/><span>الجلوس مع ثنى رجل واحده تحتك.</span>
+                </div>
+               
+            </div>
+
+            <div class="form-group">
+                <label>السؤال الخامس:عند سماع شئ مسلي فان طريقة الضحك تكون:</label>
+                <div>
+                    <input type="radio" name="SmilingWay" value="6" required /><span>ضحكة مجلية وممتنه.</span>
+                    <input type="radio" name="SmilingWay" value="4"  required/><span>ضحكة ولكن ليست بصوت مرتفع.</span>
+                    <input type="radio" name="SmilingWay" value="3" required /><span>ضحكة هادئه بينك وبين نفسك.</span>
+                    <input type="radio" name="SmilingWay" value="5" required /><span>ضحكة خجوله.</span>
+                </div>
+                
+            </div>
+
+            <div class="form-group">
+                <label>السؤال السادس:عند الدخول الى حفله اجتماعيه فان طريقة الدخول تكون : </label>
+                <div>
+                    <input type="radio" name="EnteringWay" value="6" required/><span>بشكل صاخب للفت انظار لاخرين.</span>
+                    <input type="radio" name="EnteringWay" value="4" required/><span>بشكل هادئ,مع الالتفات للبحث عن شخص تعرفه.</span>
+                    <input type="radio" name="EnteringWay" value="2" required/><span>بشكل هادئ مع محاولة عدم لفت انظار الاخرين.</span>
+                </div>
+               
+            </div>
+
+            <div class="form-group">
+                <label>السؤال السابع:عند مقاطعة الاخرين للعمل أثناء حالة التركيز الشديد فسوف تكون ردة الفعل : </label>
+                <div>
+                    <input type="radio" name="ReactionWay" value="6" required/><span>الترحاب بالمقاطعه من اجل اخد قسط من الراحه.</span>
+                    <input type="radio" name="ReactionWay" value="2" required/><span>.الشعور بالغيظ الشديد</span>
+                    <input type="radio" name="ReactionWay" value="4" required/><span>الشعور بحاله متفاوته ما بين الحالتين السابقتين.</span>
+                </div>
+                
+            </div>
+
+            <div class="form-group">
+                <label>السؤال الثامن:اللون المفضل هو : </label>
+                <div>
+                    <input type="radio" name="BestColor" value="6" required/><span>اللون الاحمر,البرتقالى.</span>
+                    <input type="radio" name="BestColor" value="7" required/><span>اللون الاسود</span>
+                    <input type="radio" name="BestColor" value="5" required/><span>اللون الاصفر,او الازرق الفاتح.</span>
+                    <input type="radio" name="BestColor" value="4" required/><span>اللون الاخضر.</span>
+                    <input type="radio" name="BestColor" value="3" required/><span>اللون الازرق الغامق,الارجوانى.</span>
+                    <input type="radio" name="BestColor" value="2" required /><span>اللون الابيض.</span>
+                    <input type="radio" name="BestColor" value="1" required/><span>اللون البنى او الرومادى.</span>
+                </div>
+                
+
+            </div>
+
+            <div class="form-group">
+                <label>السؤال التاسع:عند النوم على السرير أثناء فترة أستعدادك للنوم فأن طريقة الاستلقاء تكون : </label>
+               <div>
+                   <input type="radio" name="SleepingWay" value="7" required/><span>التمدد على الظهر.</span>
+                   <input type="radio" name="SleepingWay" value="6" required/><span>الانكفاء على البطن والوجه باتجاه الارض.</span>
+                   <input type="radio" name="SleepingWay" value="4" required/><span>الاستلقاء على احد الجانبين مع انحناء بسيط</span>.
+                   <input type="radio" name="SleepingWay" value="2" required/><span>وضع الرأس على احد اليدين.</span>
+                   <input type="radio" name="SleepingWay" value="1" required/><span>اخفاء الرأس أسفل الغطاء</span>.
+               </div>
+                 
+            </div>
+
+            <div class="form-group">
+                <label>السؤال العاشر:الحلم الذى يتكرر معك يكون حول : </label>
+                <div>
+                    <input type="radio" name="RepeatDream" value="4" required /><span>السقوط من مكان مرتفع.</span>
+                    <input type="radio" name="RepeatDream" value="2" required/><span>القتال أو المقاومه.</span>
+                    <input type="radio" name="RepeatDream" value="3" required/><span>البحث عم شئ او شخص.</span>
+                    <input type="radio" name="RepeatDream" value="5" required /><span>الطيران او الطفو على الماء.</span>
+                    <input type="radio" name="RepeatDream" value="6" required/><span>عدم الحلم بشئ عند النوم غالبا.</span>
+                </div>
+                
+            </div>
+
+
+
+
+            <input type="submit" class="sbmit btn btn-default btn-success" value="تحليل الشخصيه"  />
+
+
+
+
+            @Html.ActionLink("أضغط هنا","Haha","Home",new { @class = "sbmit btn btn-default btn-success" })
+
+
+
+        }
+
+
+    </div>
+
+
+   
+</div>
+
+
